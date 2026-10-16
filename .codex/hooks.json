@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"/.codex/hooks/session-start.sh",
+            "statusMessage": "Loading {{PROJECT}} session context",
+            "additionalContextLimit": 0
+          }
+        ]
+      }
+    ]
+  }
+}
